@@ -40,10 +40,66 @@ class Airplane {
         + It should return a string with `name` and `age`. Example: "Mary, 50"
 */
 
+// class Person {
+//   constructor(attributes){
+//     this.name = attributes.name,
+//     this.age = attributes.age,
+//     this.stomach = []
+//   }
+//   eat = function(edible){
+//     if(this.stomach.length < 10){
+//       this.stomach.push(edible);
+//     }
+//   }
+//   poop = function(){
+//     this.stomach = [];
+//   }
+//   toString = function(){
+//     return `${this.name}, ${this.age}`;
+//   }  
+// }
+
+// const personOne = new Person({
+//   name: 'Deborah', 
+//   age: 25,
+// });
+
 class Person {
-
+  constructor (name, age){
+    this.name = name;
+    this.age = age;
+    this.stomach = [];
+  }
+  eat = function(edible){
+    if(this.stomach.length < 10){
+      this.stomach.push(edible);
+    }
+  }
+  poop = function(){
+    this.stomach = [];
+  }
+  toString = function(){
+    return `${this.name}, ${this.age}`;
+  }
 }
+const neo = new Person('Neo', 20)
+const personOne = new Person('Deborah', 25);
 
+console.log(neo.toString());
+neo.eat('strawberry jello')
+neo.eat('spaghetti')
+neo.eat('garlic bread')
+console.log(neo.stomach);
+neo.poop();
+console.log(personOne.stomach);
+
+console.log(personOne.toString());
+personOne.eat('egg drop soup')
+personOne.eat('fried wontons')
+personOne.eat('sashimi')
+console.log(personOne.stomach);
+personOne.poop();
+console.log(personOne.stomach);
 /*
   TASK 2
     - Write a Car class whose constructor initializes `model` and `milesPerGallon` from arguments.
